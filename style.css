@@ -1,99 +1,127 @@
+/* =======================================================
+   1. FONT IMPORT & BODY DEFAULTS
+======================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-      body {
-        font-family: "Noto Sans JP", sans-serif;
-      }
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #FDFBF5;
+  /* Setting the default background color */
+}
 
-      /* Custom CSS for the progress donut charts */
-      @property --p {
-        syntax: "<number>";
-        inherits: true;
-        initial-value: 0;
-      }
-      .progress-donut {
-        --p: 90;
-        --b: 8px;
-        --c: white;
-        --bg: #e4d7a8;
-        width: 100px;
-        height: 100px;
-        aspect-ratio: 1;
-        position: relative;
-        display: inline-grid;
-        place-content: center;
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-        animation: p 1s 0.5s both;
-      }
-      .progress-donut:before,
-      .progress-donut:after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-      }
-      .progress-donut:before {
-        inset: 0;
-        background: radial-gradient(
-              farthest-side,
-              var(--c) 98%,
-              #0000
-            )
-            top/var(--b) var(--b) no-repeat,
-          conic-gradient(var(--c) calc(var(--p) * 1%), var(--bg) 0);
-        -webkit-mask: radial-gradient(
-          farthest-side,
-          #0000 calc(99% - var(--b)),
-          #000 calc(100% - var(--b))
-        );
-        mask: radial-gradient(
-          farthest-side,
-          #0000 calc(99% - var(--b)),
-          #000 calc(100% - var(--b))
-        );
-      }
-      .progress-donut:after {
-        inset: calc(50% - var(--b) / 2);
-        background: var(--c);
-        transform: rotate(calc(var(--p) * 3.6deg))
-          translateY(calc(50% - 100px / 2));
-      }
-      @keyframes p {
-        from {
-          --p: 0;
-        }
-      }
 
-      /* Faint sunburst background effect */
-      .sunburst-bg {
-        position: relative;
-        z-index: 1;
-      }
-      .sunburst-bg::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: radial-gradient(
-          circle at 75% 85%,
-          rgba(255, 255, 255, 0.15) 0%,
-          rgba(255, 255, 255, 0) 50%
-        );
-        z-index: -1;
-      }
+/* =======================================================
+   2. NAVBAR STYLES
+======================================================== */
 
-      /* Custom style for outlined text */
-      .outline-text {
-        color: transparent;
-        -webkit-text-stroke: 1.5px #dcdcdc;
-        text-shadow: 1.5px #dcdcdc;
-      }
+/* Remove default background colors on hover, focus, and active states */
+.menu li>a:hover,
+.menu li>a:focus,
+.menu li>a.active {
+  background-color: transparent !important;
+}
 
-      /* Custom style for link separators */
-      .nav-links li:not(:last-child)::after {
-        content: "•";
-        color: #374151; /* text-gray-700 */
-        margin: 0 0.75rem; /* mx-3 */
-      }
-   
+/* Style for the currently active navigation link */
+.menu li>a.active {
+  color: #EDDD5E !important;
+  /* Site's yellow accent color */
+  font-weight: 700;
+  /* Makes the text slightly bolder */
+}
+
+/* Optional: Style for hovering over ANY nav link */
+.menu li>a:hover {
+  color: #f0e68c;
+  /* A slightly lighter yellow for hover effect */
+}
+
+
+/* =======================================================
+   3. COMPONENT STYLES (DONUT CHART, ETC.)
+======================================================== */
+
+/* Custom CSS for the progress donut charts */
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.progress-donut {
+  --p: 90;
+  --b: 8px;
+  --c: white;
+  --bg: #e4d7a8;
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  animation: p 1s 0.5s both;
+}
+
+.progress-donut:before,
+.progress-donut:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.progress-donut:before {
+  inset: 0;
+  background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), var(--bg) 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.progress-donut:after {
+  inset: calc(50% - var(--b) / 2);
+  background: var(--c);
+  transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - 100px / 2));
+}
+
+@keyframes p {
+  from {
+    --p: 0;
+  }
+}
+
+/* Faint sunburst background effect */
+.sunburst-bg {
+  position: relative;
+  z-index: 1;
+}
+
+.sunburst-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 75% 85%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+  z-index: -1;
+}
+
+/* Custom style for outlined text in the History section */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #dcdcdc;
+  text-shadow: 1.5px #dcdcdc;
+  /* Standard property */
+}
+
+/* Custom style for link separators in the footer */
+.nav-links li:not(:last-child)::after {
+  content: "•";
+  color: #374151;
+  /* text-gray-700 */
+  margin: 0 0.75rem;
+  /* mx-3 */
+}

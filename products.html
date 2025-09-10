@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品 - Sanuki Farm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://kit.fontawesome.com/62af192729.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+  <header class="relative h-[60vh] md:h-[50vh] flex flex-col text-white">
+    <img src="img/herobg.png" alt="Vineyard background" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <nav class="relative z-10 w-full">
+      <div class="container mx-auto px-4">
+        <div class="navbar text-white">
+          <div class="navbar-start">
+            <a href="index.html"><img class="h-12 md:h-14" src="img/logo white.png" alt="Sanuki Farm Logo" /></a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-base font-medium">
+              <li><a href="index.html">TOPページ</a></li>
+              <li><a href="news.html">新着情報</a></li>
+              <li><a href="products.html" class="active">商品</a></li>
+              <li><a>農園案内</a></li>
+              <li><a>会社概要</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn bg-[#EDDD5E] text-black border-none rounded-full px-6 hidden md:inline-flex">お問い合わせ</a>
+            <button id="menu-btn" class="btn btn-ghost lg:hidden text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div id="mobile-menu" class="fixed inset-0 bg-[#5B8C51] text-white flex flex-col items-center justify-center space-y-8 text-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50">
+    </div>
+  
+  <main class="bg-white">
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-800">商品</h2></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div class="text-center group">
+            <div class="bg-gray-100 rounded-2xl p-4">
+              <img src="img/productimg (1).jpg"alt="シャインマスカット" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mt-6">シャインマスカット</h3>
+            <p class="text-lg text-gray-600 my-2">0円</p>
+            <div class="flex justify-center gap-2 mt-4">
+              <button class="btn btn-sm md:btn-md bg-gray-200 border-none rounded-full flex-1">カートに追加</button>
+              <button class="btn btn-sm md:btn-md bg-[#F5D973] border-none rounded-full flex-1">購入</button>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gray-100 rounded-2xl p-4">
+              <img src="img/productimg (4).jpg"alt="シャインマスカット" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mt-6">シャインマスカット</h3>
+            <p class="text-lg text-gray-600 my-2">0円</p>
+            <div class="flex justify-center gap-2 mt-4">
+              <button class="btn btn-sm md:btn-md bg-gray-200 border-none rounded-full flex-1">カートに追加</button>
+              <button class="btn btn-sm md:btn-md bg-[#F5D973] border-none rounded-full flex-1">購入</button>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gray-100 rounded-2xl p-4">
+              <img src="img/productimg (2).jpg" alt="贅沢な桃" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mt-6">贅沢な桃</h3>
+            <p class="text-lg text-gray-600 my-2">0円</p>
+            <div class="flex justify-center gap-2 mt-4">
+              <button class="btn btn-sm md:btn-md bg-gray-200 border-none rounded-full flex-1">カートに追加</button>
+              <button class="btn btn-sm md:btn-md bg-[#F5D973] border-none rounded-full flex-1">購入</button>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gray-100 rounded-2xl p-4">
+              <img src="img/productimg (3).jpg" alt="贅沢な桃" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mt-6">贅沢な桃</h3>
+            <p class="text-lg text-gray-600 my-2">0円</p>
+            <div class="flex justify-center gap-2 mt-4">
+              <button class="btn btn-sm md:btn-md bg-gray-200 border-none rounded-full flex-1">カートに追加</button>
+              <button class="btn btn-sm md:btn-md bg-[#F5D973] border-none rounded-full flex-1">購入</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="w-full">
+    <div class="bg-[#F5D973]">
+      <div class="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <nav>
+          <ul class="nav-links flex flex-wrap justify-center items-center font-semibold text-gray-800 text-sm tracking-widest">
+            <li><a href="#" class="hover:text-gray-600">FARMERS</a></li>
+            <li><a href="#" class="hover:text-gray-600">ORGANIC</a></li>
+            <li><a href="#" class="hover:text-gray-600">FOODS</a></li>
+            <li><a href="#" class="hover:text-gray-600">PRODUCT</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-6 text-sm font-semibold text-gray-800">
+          <a href="tel:0877571111" class="flex items-center gap-3 hover:text-gray-600">
+            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-phone"></i></div>
+            <span>0877-57-1111</span>
+          </a>
+          <a href="mailto:mail@mail.com" class="flex items-center gap-3 hover:text-gray-600">
+            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-envelope"></i></div>
+            <span>mail@mail.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#FDFBF5]">
+      <div class="container mx-auto px-4 pt-16 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div class="lg:col-span-1">
+            <img src="img/logo black.png" alt="Logo" class="h-16 lg:h-36 mb-6" />
+            <p class="text-gray-600 mb-8 max-w-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center gap-3">
+              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="lg:col-span-2"><p class="text-2xl md:text-3xl font-medium text-gray-700 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="md:col-start-2 md:col-span-1">
+            <h5 class="font-bold text-gray-800 mb-4">Useful Link</h5>
+            <ul class="space-y-3 text-gray-600">
+              <li><a href="#" class="hover:text-[#609966]">Company</a></li>
+              <li><a href="#" class="hover:text-[#609966]">Contact</a></li>
+            </ul>
+          </div>
+          <div class="md:col-span-1">
+            <h5 class="font-bold text-gray-800 mb-4">Our Address</h5>
+            <p class="text-gray-600 leading-relaxed">〒761-2402香川県丸亀市<br />綾歌町岡田下346-3</p>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="border-t border-gray-200 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+          <div class="flex gap-6"><a href="#" class="hover:text-black">Terms & Conditions</a><a href="#" class="hover:text-black">Privacy Policy</a></div>
+          <div class="text-center sm:text-right"><p>© 2025 サヌキファーム。すべての権利を保有します。</p></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ... same script as index.html ...
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("close-menu");
+    
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("translate-x-full");
+    });
+    
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
+  </script>
+</body>
+</html>
