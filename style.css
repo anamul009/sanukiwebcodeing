@@ -6,8 +6,7 @@
 
 body {
   font-family: "Noto Sans JP", sans-serif;
-  background-color: #FDFBF5;
-  /* Setting the default background color */
+  background-color: #FDFBF5; /* Setting the default background color */
 }
 
 
@@ -16,24 +15,30 @@ body {
 ======================================================== */
 
 /* Remove default background colors on hover, focus, and active states */
-.menu li>a:hover,
-.menu li>a:focus,
-.menu li>a.active {
+.menu li > a:hover,
+.menu li > a:focus,
+.menu li > a.active,
+.btn.active {
   background-color: transparent !important;
 }
 
 /* Style for the currently active navigation link */
-.menu li>a.active {
-  color: #EDDD5E !important;
-  /* Site's yellow accent color */
-  font-weight: 700;
-  /* Makes the text slightly bolder */
+.menu li > a.active {
+  color: #EDDD5E !important; /* Site's yellow accent color */
+  font-weight: 700;      /* Makes the text slightly bolder */
 }
 
+/* Special active style for the contact button */
+.navbar-end > a.active {
+    background-color: #EDDD5E !important;
+    outline: 2px solid white;
+    outline-offset: -2px;
+}
+
+
 /* Optional: Style for hovering over ANY nav link */
-.menu li>a:hover {
-  color: #f0e68c;
-  /* A slightly lighter yellow for hover effect */
+.menu li > a:hover {
+    color: #f0e68c; /* A slightly lighter yellow for hover effect */
 }
 
 
@@ -87,9 +92,7 @@ body {
 }
 
 @keyframes p {
-  from {
-    --p: 0;
-  }
+  from { --p: 0; }
 }
 
 /* Faint sunburst background effect */
@@ -113,15 +116,12 @@ body {
 .outline-text {
   color: transparent;
   -webkit-text-stroke: 1.5px #dcdcdc;
-  text-shadow: 1.5px #dcdcdc;
-  /* Standard property */
+  text-stroke: 1.5px #dcdcdc; /* Standard property */
 }
 
 /* Custom style for link separators in the footer */
 .nav-links li:not(:last-child)::after {
   content: "•";
-  color: #374151;
-  /* text-gray-700 */
-  margin: 0 0.75rem;
-  /* mx-3 */
+  color: #374151; /* text-gray-700 */
+  margin: 0 0.75rem; /* mx-3 */
 }

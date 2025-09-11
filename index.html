@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="style.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/62af192729.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -34,7 +36,7 @@
       <div class="container mx-auto px-4">
         <div class="navbar text-white">
           <div class="navbar-start">
-            <a href="index.html"><img class="h-12 md:h-16" src="img/logo white.png" alt="Sanuki Farm Logo" /></a>
+            <a href="index.html"><img class="h-12 md:h-16" src="img/logo-white.png" alt="Sanuki Farm Logo" /></a>
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 text-base font-medium">
@@ -72,7 +74,7 @@
     <section class="bg-[#F4F4F4] py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col">
+          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col" data-aos="fade-up">
             <div class="flex items-center gap-4 border-b pb-5">
               <div class="h-14 w-14 bg-[#5B8C51] rounded-full flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-tractor text-white text-xl"></i></div>
               <h2 class="font-bold text-xl text-gray-800">果実に込めた思い</h2>
@@ -80,7 +82,7 @@
             <p class="text-base text-gray-600 pt-5 pb-6 leading-relaxed flex-grow">自然の恵みを最大限に生かし、丹精込めて果物を育てています。確かな技術と情熱で、高品質な収穫をお届けします。</p>
             <a href="#" class="flex items-center gap-3 text-[#5B8C51] font-bold group">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
           </div>
-          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col">
+          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-center gap-4 border-b pb-5">
               <div class="h-14 w-14 bg-[#5B8C51] rounded-full flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-feather-pointed text-white text-xl"></i></div>
               <h2 class="font-bold text-xl text-gray-800">新鮮な果物</h2>
@@ -88,7 +90,7 @@
             <p class="text-base text-gray-600 pt-5 pb-6 leading-relaxed flex-grow">摘みたての果物の美味しさを、そのまま皆さまにお届けします。旬の香りと豊かな風味を大切に、丁寧に育てています。</p>
             <a href="#" class="flex items-center gap-3 text-[#5B8C51] font-bold group">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
           </div>
-          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col">
+          <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col" data-aos="fade-up" data-aos-delay="400">
             <div class="flex items-center gap-4 border-b pb-5">
               <div class="h-14 w-14 bg-[#5B8C51] rounded-full flex items-center justify-center flex-shrink-0"><i class="fa-brands fa-pagelines text-white text-xl"></i></div>
               <h2 class="font-bold text-xl text-gray-800">有機栽培へのこだわり</h2>
@@ -100,17 +102,17 @@
       </div>
     </section>
 
-    <section class="bg-[#F4F4F4] py-16 md:py-24">
+    <section class="bg-[#F4F4F4] py-16 md:py-24 overflow-hidden">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center max-w-screen-lg mx-auto">
-          <div class="w-full md:w-1/2 relative">
+          <div class="w-full md:w-1/2 relative" data-aos="fade-right">
             <img class="w-full h-[450px] md:h-[600px] object-cover rounded-2xl shadow-lg" src="img/aboutusimg.png" alt="A person inspecting grapes on a vine" />
             <div class="absolute bottom-[-1.5rem] right-[-1.5rem] hidden md:block bg-[#609966] text-white p-8 rounded-2xl shadow-xl w-[300px] text-center">
               <h3 class="font-extrabold text-5xl mb-2">100+</h3>
               <p class="font-medium text-lg">Tons of Annual Harvest</p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 pt-8 md:pt-0">
+          <div class="w-full md:w-1/2 pt-8 md:pt-0" data-aos="fade-left">
             <button class="flex items-center gap-2 bg-white rounded-full py-2 px-4 mb-5 text-gray-600 text-sm font-semibold shadow-sm"><i class="fa-solid fa-seedling text-[#609966]"></i><span>私たちについて</span></button>
             <h3 class="font-extrabold text-3xl md:text-4xl mb-6 leading-tight text-gray-800">自然の恵みを生かし、丹精込めて育てています。</h3>
             <p class="font-medium text-base mb-8 text-gray-600 leading-relaxed">サヌキファームでは、自然の恵みを生かした有機栽培の果物を丹精込めて育てています。一つひとつの実に愛情を注ぎ、豊かな味わいと特別な品質を皆さまにお届けいたします。</p>
@@ -131,7 +133,7 @@
 
     <section class="bg-[#609966]">
       <div class="container mx-auto px-4 py-16 md:py-24">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4" data-aos="fade-up">
           <div>
             <span class="inline-block bg-white text-black text-xs font-bold px-4 py-1.5 rounded-md mb-4">サービス内容</span>
             <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight">自然ともに育む、<br />確かな品質</h2>
@@ -142,7 +144,7 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
             <div class="p-5"><img src="img/Service (1).png" alt="Tractor in a green field" class="w-full h-56 object-cover rounded-2xl" /></div>
             <div class="p-6 pt-0 flex-grow flex flex-col">
               <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
@@ -151,7 +153,7 @@
               <div class="flex justify-end"><a href="#" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></a></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
             <div class="p-5"><img src="img/Service (2).png" alt="Tractor in a field at sunset" class="w-full h-56 object-cover rounded-2xl" /></div>
             <div class="p-6 pt-0 flex-grow flex flex-col">
               <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">果物</p></div>
@@ -160,7 +162,7 @@
               <div class="flex justify-end"><a href="#" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></a></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
             <div class="p-5"><img src="img/Service (3).png" alt="Farmland with plastic mulch" class="w-full h-56 object-cover rounded-2xl" /></div>
             <div class="p-6 pt-0 flex-grow flex flex-col">
               <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
@@ -173,36 +175,36 @@
       </div>
     </section>
 
-    <section class="py-16 md:py-24">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-xl overflow-hidden max-w-screen-lg mx-auto">
-          <div class="w-full md:w-1/2">
-            <img src="img/farmer.jpg" alt="A smiling woman holding freshly picked grapes" class="w-full h-full object-cover min-h-[400px] md:min-h-[500px]" />
-          </div>
-          <div class="w-full md:w-1/2 bg-[#F5D973] p-8 md:p-12 lg:p-16 flex flex-col justify-center sunburst-bg">
-            <div class="mb-5">
-              <span class="inline-flex items-center gap-2 bg-white/40 text-gray-800 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-leaf"></i> 私たちの取り組み</span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">新鮮な農産物で<br />健康な暮らし</h2>
-            <p class="text-gray-700 mb-10 text-base leading-relaxed">私たちの農場で育てた新鮮な果物は、自然の恵みをたっぷり含んでいます。毎日の食卓に彩りと甘さを届け、健康で豊かな暮らしをサポートします。</p>
-            <div class="flex flex-col sm:flex-row gap-8">
-              <div class="flex items-center gap-4">
-                <div class="progress-donut" style="--p: 90">90%</div>
-                <div><p class="font-bold text-gray-800 text-lg">Eco Farms</p></div>
+    <section class="py-16 md:py-24" data-aos="zoom-in-up">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-xl overflow-hidden max-w-screen-lg mx-auto">
+              <div class="w-full md:w-1/2">
+                <img src="img/farmer.jpg" alt="A smiling woman holding freshly picked grapes" class="w-full h-full object-cover min-h-[400px] md:min-h-[500px]" />
               </div>
-              <div class="flex items-center gap-4">
-                <div class="progress-donut" style="--p: 78">78%</div>
-                <div><p class="font-bold text-gray-800 text-lg">Special Equipment</p></div>
+              <div class="w-full md:w-1/2 bg-[#F5D973] p-8 md:p-12 lg:p-16 flex flex-col justify-center sunburst-bg">
+                <div class="mb-5">
+                  <span class="inline-flex items-center gap-2 bg-white/40 text-gray-800 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-leaf"></i> 私たちの取り組み</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">新鮮な農産物で<br />健康な暮らし</h2>
+                <p class="text-gray-700 mb-10 text-base leading-relaxed">私たちの農場で育てた新鮮な果物は、自然の恵みをたっぷり含んでいます。毎日の食卓に彩りと甘さを届け、健康で豊かな暮らしをサポートします。</p>
+                <div class="flex flex-col sm:flex-row gap-8">
+                  <div class="flex items-center gap-4">
+                    <div class="progress-donut" style="--p: 90">90%</div>
+                    <div><p class="font-bold text-gray-800 text-lg">Eco Farms</p></div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="progress-donut" style="--p: 78">78%</div>
+                    <div><p class="font-bold text-gray-800 text-lg">Special Equipment</p></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4">
-        <div class="mb-16 text-center md:text-left">
+        <div class="mb-16 text-center md:text-left" data-aos="fade-up">
           <div class="mb-8"><span class="inline-flex items-center bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-1.5 rounded-full">Our History</span></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="text-4xl md:text-5xl lg:text-6xl text-gray-800"><span class="font-light">0000年から続く</span><strong class="font-extrabold">農業</strong></div>
@@ -210,7 +212,7 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
-          <div class="text-center md:text-left">
+          <div class="text-center md:text-left" data-aos="fade-up">
             <h3 class="outline-text text-8xl font-black mb-4 tracking-widest">0000</h3>
             <div class="relative h-4 mb-6">
               <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200"></div>
@@ -219,7 +221,7 @@
             <h4 class="font-extrabold text-xl text-gray-800 mb-3">Open my Farm</h4>
             <p class="text-gray-500 text-sm leading-relaxed">Corrupti ut consequatur magni minus! Iusto eos consectetur similique minus culpa odio temporibus.</p>
           </div>
-          <div class="text-center md:text-left">
+          <div class="text-center md:text-left" data-aos="fade-up" data-aos-delay="200">
             <h3 class="outline-text text-8xl font-black mb-4 tracking-widest">0000</h3>
             <div class="relative h-4 mb-6">
               <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200"></div>
@@ -228,7 +230,7 @@
             <h4 class="font-extrabold text-xl text-gray-800 mb-3">Farm Remodelacion</h4>
             <p class="text-gray-500 text-sm leading-relaxed">Majority have suffered alteration in some form by injected humor culpa odio temporibus.</p>
           </div>
-          <div class="text-center md:text-left">
+          <div class="text-center md:text-left" data-aos="fade-up" data-aos-delay="400">
             <h3 class="outline-text text-8xl font-black mb-4 tracking-widest">0000</h3>
             <div class="relative h-4 mb-6">
               <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200"></div>
@@ -243,7 +245,7 @@
 
     <section class="pb-16 md:pb-24">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4" data-aos="fade-up">
           <div>
             <div class="mb-4"><span class="inline-flex items-center gap-2 bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-comments"></i> 証言</span></div>
             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">What our customers say</h2>
@@ -254,7 +256,7 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up">
             <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
             <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
             <p class="text-gray-600 mb-6 flex-grow">サヌキファームのシャインマスカットは、とても甘くジューシーで感動しました！</p>
@@ -263,7 +265,7 @@
               <div><h4 class="font-bold text-gray-800">佐藤 美咲</h4><p class="text-sm text-gray-500">お客様</p></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up" data-aos-delay="200">
             <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
             <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
             <p class="text-gray-600 mb-6 flex-grow">丁寧に育てられた桃は香りも味も格別です。毎年楽しみにしています。</p>
@@ -272,7 +274,7 @@
               <div><h4 class="font-bold text-gray-800">高橋 健一</h4><p class="text-sm text-gray-500">お客様</p></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up" data-aos-delay="400">
             <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
             <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
             <p class="text-gray-600 mb-6 flex-grow">新鮮な果物を安心して食べられるのが嬉しいです。家族みんなで楽しんでいます。</p>
@@ -287,12 +289,12 @@
 
     <section class="pb-16 md:pb-24">
       <div class="container mx-auto px-4">
-        <div class="mb-12">
+        <div class="mb-12" data-aos="fade-up">
           <div class="mb-4"><span class="inline-flex items-center gap-2 bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-pen-nib"></i> 最新のブログ</span></div>
           <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">最新の投稿・記事</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group">
+          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group" data-aos="fade-up">
             <div class="relative">
               <img src="img/blog (1).jpg" alt="Woman harvesting grapes" class="w-full h-64 object-cover" />
               <div class="absolute inset-0 bg-black/10"></div>
@@ -307,7 +309,7 @@
               <h3 class="text-xl font-extrabold text-gray-800 hover:text-[#609966] transition-colors"><a href="#">Lorem Ipsum is simply dummy text?</a></h3>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group">
+          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
             <div class="relative">
               <img src="img/blog (2).jpg" alt="Hands holding a basket of fresh peaches" class="w-full h-64 object-cover" />
               <div class="absolute inset-0 bg-black/10"></div>
@@ -322,7 +324,7 @@
               <h3 class="text-xl font-extrabold text-gray-800 hover:text-[#609966] transition-colors"><a href="#">Lorem Ipsum is simply dummy text ?</a></h3>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group">
+          <div class="bg-white rounded-3xl shadow-sm overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
             <div class="relative">
               <img src="img/blog (3).jpg" alt="Basket of peaches on a dark wooden surface" class="w-full h-64 object-cover" />
               <div class="absolute inset-0 bg-black/10"></div>
@@ -342,7 +344,7 @@
     </section>
   </main>
   
-  <footer class="w-full">
+  <footer class="w-full" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="bg-[#F5D973]">
       <div class="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
         <nav>
@@ -369,7 +371,7 @@
       <div class="container mx-auto px-4 pt-16 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <div class="lg:col-span-1">
-            <img src="img/logo black.png" alt="Logo" class="h-16 lg:h-36 mb-6" />
+            <img src="img/logo-black.png" alt="Logo" class="h-12 lg:h-16 mb-6" />
             <p class="text-gray-600 mb-8 max-w-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
             <div class="flex items-center gap-3">
               <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
@@ -403,6 +405,13 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+  </script>
   <script>
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
