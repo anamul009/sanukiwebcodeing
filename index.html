@@ -14,12 +14,13 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/62af192729.js" crossorigin="anonymous"></script>
+  
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <header class="relative min-h-screen flex flex-col overflow-hidden">
+  <header class="relative min-h-screen flex flex-col">
     <video
         autoplay
         muted
@@ -80,7 +81,7 @@
               <h2 class="font-bold text-xl text-gray-800">果実に込めた思い</h2>
             </div>
             <p class="text-base text-gray-600 pt-5 pb-6 leading-relaxed flex-grow">自然の恵みを最大限に生かし、丹精込めて果物を育てています。確かな技術と情熱で、高品質な収穫をお届けします。</p>
-            <a href="#" class="flex items-center gap-3 text-[#5B8C51] font-bold group">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
+            <button onclick="modal_thoughts.showModal()" class="flex items-center gap-3 text-[#5B8C51] font-bold group cursor-pointer">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></button>
           </div>
           <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-center gap-4 border-b pb-5">
@@ -88,7 +89,7 @@
               <h2 class="font-bold text-xl text-gray-800">新鮮な果物</h2>
             </div>
             <p class="text-base text-gray-600 pt-5 pb-6 leading-relaxed flex-grow">摘みたての果物の美味しさを、そのまま皆さまにお届けします。旬の香りと豊かな風味を大切に、丁寧に育てています。</p>
-            <a href="#" class="flex items-center gap-3 text-[#5B8C51] font-bold group">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
+            <button onclick="modal_fresh.showModal()" class="flex items-center gap-3 text-[#5B8C51] font-bold group cursor-pointer">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></button>
           </div>
           <div class="p-8 rounded-2xl bg-white shadow-md flex flex-col" data-aos="fade-up" data-aos-delay="400">
             <div class="flex items-center gap-4 border-b pb-5">
@@ -96,7 +97,7 @@
               <h2 class="font-bold text-xl text-gray-800">有機栽培へのこだわり</h2>
             </div>
             <p class="text-base text-gray-600 pt-5 pb-6 leading-relaxed flex-grow">環境への配慮を第一に考え、化学肥料や農薬に頼らない有機栽培を実践。安全で、果物本来の味がする製品作りを目指します。</p>
-            <a href="#" class="flex items-center gap-3 text-[#5B8C51] font-bold group">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
+            <button onclick="modal_organic.showModal()" class="flex items-center gap-3 text-[#5B8C51] font-bold group cursor-pointer">Read More<span class="h-8 w-8 bg-[#5B8C51] inline-flex rounded-full justify-center items-center text-white transition-transform duration-300 group-hover:rotate-0 -rotate-45"><i class="fa-solid fa-arrow-right text-sm"></i></span></button>
           </div>
         </div>
       </div>
@@ -139,36 +140,71 @@
             <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight">自然ともに育む、<br />確かな品質</h2>
           </div>
           <div class="flex-shrink-0 flex gap-4">
-            <button class="w-12 h-12 border-2 border-white/40 text-white rounded-md flex items-center justify-center hover:bg-white/10 transition-colors"><i class="fas fa-chevron-left"></i></button>
-            <button class="w-12 h-12 border-2 border-white/40 text-white rounded-md flex items-center justify-center hover:bg-white/10 transition-colors"><i class="fas fa-chevron-right"></i></button>
+            <button id="carousel-prev" class="w-12 h-12 border-2 border-white/40 text-white rounded-md flex items-center justify-center hover:bg-white/10 transition-colors"><i class="fas fa-chevron-left"></i></button> 
+            <button id="carousel-next" class="w-12 h-12 border-2 border-white/40 text-white rounded-md flex items-center justify-center hover:bg-white/10 transition-colors"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
-            <div class="p-5"><img src="img/Service (1).png" alt="Tractor in a green field" class="w-full h-56 object-cover rounded-2xl" /></div>
-            <div class="p-6 pt-0 flex-grow flex flex-col">
-              <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
-              <h3 class="text-2xl font-extrabold text-gray-800 mb-3">収穫コンセプト</h3>
-              <p class="text-gray-600 text-sm mb-6 flex-grow">果物の最良の味わいを引き出すため、一つひとつ丁寧に収穫しています。</p>
-              <div class="flex justify-end"><a href="#" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></a></div>
+        <div id="service-carousel" class="carousel w-full scroll-smooth">
+          <div id="slide1" class="carousel-item w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="img/Service (1).png" alt="Tractor" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">収穫コンセプト</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">果物の最良の味わいを引き出すため、一つひとつ丁寧に収穫しています。</p>
+                  <div class="flex justify-end"><button onclick="modal_harvest.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="img/Service (2).png" alt="Produce" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">果物</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">農産物</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">私たちの農場で育てた新鮮で高品質な農産物をお届けします。</p>
+                  <div class="flex justify-end"><button onclick="modal_products.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="img/Service (3).png" alt="Farmland" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">土壌改良</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">栄養豊かな土壌作りにこだわり、健康で美味しい果物を育てています。</p>
+                  <div class="flex justify-end"><button onclick="modal_soil.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
-            <div class="p-5"><img src="img/Service (2).png" alt="Tractor in a field at sunset" class="w-full h-56 object-cover rounded-2xl" /></div>
-            <div class="p-6 pt-0 flex-grow flex flex-col">
-              <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">果物</p></div>
-              <h3 class="text-2xl font-extrabold text-gray-800 mb-3">農産物</h3>
-              <p class="text-gray-600 text-sm mb-6 flex-grow">私たちの農場で育てた新鮮で高品質な農産物をお届けします。</p>
-              <div class="flex justify-end"><a href="#" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></a></div>
-            </div>
-          </div>
-          <div class="bg-white rounded-3xl shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
-            <div class="p-5"><img src="img/Service (3).png" alt="Farmland with plastic mulch" class="w-full h-56 object-cover rounded-2xl" /></div>
-            <div class="p-6 pt-0 flex-grow flex flex-col">
-              <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">有機肥料</p></div>
-              <h3 class="text-2xl font-extrabold text-gray-800 mb-3">土壌改良</h3>
-              <p class="text-gray-600 text-sm mb-6 flex-grow">栄養豊かな土壌作りにこだわり、健康で美味しい果物を育てています。</p>
-              <div class="flex justify-end"><a href="#" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></a></div>
+          </div> 
+          <div id="slide2" class="carousel-item w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="https://images.unsplash.com/photo-1579112933184-2de31d749970?auto=format&fit=crop&q=80&w=1287" alt="Farm stand" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">販売</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">直売所のご案内</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">採れたての新鮮な果物を直接お買い求めいただけます。</p>
+                  <div class="flex justify-end"><button onclick="modal_sales.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="https://images.unsplash.com/photo-1591060639912-2f22c6b402e1?auto=format&fit=crop&q=80&w=1287" alt="Fruit picking" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">体験</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">果物狩り体験</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">季節限定で、シャインマスカットや桃の収穫体験イベントを開催しています。</p>
+                  <div class="flex justify-end"><button onclick="modal_picking.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl shadow-lg flex flex-col">
+                <div class="p-5"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1470" alt="Online store analytics" class="w-full h-56 object-cover rounded-2xl" /></div>
+                <div class="p-6 pt-0 flex-grow flex flex-col">
+                  <div class="flex items-center gap-2 mb-3"><span class="block w-2 h-2 bg-[#609966] rounded-full"></span><p class="text-sm font-semibold text-gray-500">オンライン</p></div>
+                  <h3 class="text-2xl font-extrabold text-gray-800 mb-3">オンラインストア</h3>
+                  <p class="text-gray-600 text-sm mb-6 flex-grow">遠方にお住まいの方でも、私たちの果物をお楽しみいただけます。</p>
+                  <div class="flex justify-end"><button onclick="modal_store.showModal()" class="w-14 h-14 bg-[#609966] rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors"><i class="fas fa-arrow-up-right-from-square text-xl"></i></button></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -176,30 +212,30 @@
     </section>
 
     <section class="py-16 md:py-24" data-aos="zoom-in-up">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-xl overflow-hidden max-w-screen-lg mx-auto">
-              <div class="w-full md:w-1/2">
-                <img src="img/farmer.jpg" alt="A smiling woman holding freshly picked grapes" class="w-full h-full object-cover min-h-[400px] md:min-h-[500px]" />
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-xl overflow-hidden max-w-screen-lg mx-auto">
+          <div class="w-full md:w-1/2">
+            <img src="img/farmer.jpg" alt="A smiling woman holding freshly picked grapes" class="w-full h-full object-cover min-h-[400px] md:min-h-[500px]" />
+          </div>
+          <div class="w-full md:w-1/2 bg-[#F5D973] p-8 md:p-12 lg:p-16 flex flex-col justify-center sunburst-bg">
+            <div class="mb-5">
+              <span class="inline-flex items-center gap-2 bg-white/40 text-gray-800 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-leaf"></i> 私たちの取り組み</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">新鮮な農産物で<br />健康な暮らし</h2>
+            <p class="text-gray-700 mb-10 text-base leading-relaxed">私たちの農場で育てた新鮮な果物は、自然の恵みをたっぷり含んでいます。毎日の食卓に彩りと甘さを届け、健康で豊かな暮らしをサポートします。</p>
+            <div class="flex flex-col sm:flex-row gap-8">
+              <div class="flex items-center gap-4">
+                <div class="progress-donut" style="--p: 90">90%</div>
+                <div><p class="font-bold text-gray-800 text-lg">Eco Farms</p></div>
               </div>
-              <div class="w-full md:w-1/2 bg-[#F5D973] p-8 md:p-12 lg:p-16 flex flex-col justify-center sunburst-bg">
-                <div class="mb-5">
-                  <span class="inline-flex items-center gap-2 bg-white/40 text-gray-800 text-sm font-semibold px-4 py-1.5 rounded-full"><i class="fas fa-leaf"></i> 私たちの取り組み</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">新鮮な農産物で<br />健康な暮らし</h2>
-                <p class="text-gray-700 mb-10 text-base leading-relaxed">私たちの農場で育てた新鮮な果物は、自然の恵みをたっぷり含んでいます。毎日の食卓に彩りと甘さを届け、健康で豊かな暮らしをサポートします。</p>
-                <div class="flex flex-col sm:flex-row gap-8">
-                  <div class="flex items-center gap-4">
-                    <div class="progress-donut" style="--p: 90">90%</div>
-                    <div><p class="font-bold text-gray-800 text-lg">Eco Farms</p></div>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div class="progress-donut" style="--p: 78">78%</div>
-                    <div><p class="font-bold text-gray-800 text-lg">Special Equipment</p></div>
-                  </div>
-                </div>
+              <div class="flex items-center gap-4">
+                <div class="progress-donut" style="--p: 78">78%</div>
+                <div><p class="font-bold text-gray-800 text-lg">Special Equipment</p></div>
               </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="py-16 md:py-24">
@@ -251,36 +287,71 @@
             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">What our customers say</h2>
           </div>
           <div class="hidden md:flex gap-4">
-            <button class="w-12 h-12 border-2 border-gray-300 text-gray-500 rounded-md flex items-center justify-center hover:bg-gray-100 transition-colors"><i class="fas fa-chevron-left"></i></button>
-            <button class="w-12 h-12 border-2 border-gray-300 text-gray-500 rounded-md flex items-center justify-center hover:bg-gray-100 transition-colors"><i class="fas fa-chevron-right"></i></button>
+            <button id="testimonial-prev" class="w-12 h-12 border-2 border-gray-300 text-gray-500 rounded-md flex items-center justify-center hover:bg-gray-100 transition-colors"><i class="fas fa-chevron-left"></i></button>
+            <button id="testimonial-next" class="w-12 h-12 border-2 border-gray-300 text-gray-500 rounded-md flex items-center justify-center hover:bg-gray-100 transition-colors"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up">
-            <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
-            <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="text-gray-600 mb-6 flex-grow">サヌキファームのシャインマスカットは、とても甘くジューシーで感動しました！</p>
-            <div class="flex items-center gap-4">
-              <img src="img/dp (3).png" alt="Customer Sato Miki" class="w-14 h-14 rounded-full object-cover" />
-              <div><h4 class="font-bold text-gray-800">佐藤 美咲</h4><p class="text-sm text-gray-500">お客様</p></div>
+        <div id="testimonial-carousel" class="carousel w-full scroll-smooth">
+          <div id="testimonial-slide1" class="carousel-item w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-600 mb-6 flex-grow">サヌキファームのシャインマスカットは、とても甘くジューシーで感動しました！</p>
+                <div class="flex items-center gap-4">
+                  <img src="img/dp (3).png" alt="Customer Sato Miki" class="w-14 h-14 rounded-full object-cover" />
+                  <div><h4 class="font-bold text-gray-800">佐藤 美咲</h4><p class="text-sm text-gray-500">お客様</p></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
+                <p class="text-gray-600 mb-6 flex-grow">丁寧に育てられた桃は香りも味も格別です。毎年楽しみにしています。</p>
+                <div class="flex items-center gap-4">
+                  <img src="img/dp (1).png" alt="Customer Takahashi Kenichi" class="w-14 h-14 rounded-full object-cover" />
+                  <div><h4 class="font-bold text-gray-800">高橋 健一</h4><p class="text-sm text-gray-500">お客様</p></div>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
+                <p class="text-gray-600 mb-6 flex-grow">新鮮な果物を安心して食べられるのが嬉しいです。家族みんなで楽しんでいます。</p>
+                <div class="flex items-center gap-4">
+                  <img src="img/dp (2).png" alt="Customer Suzuki Hanako" class="w-14 h-14 rounded-full object-cover" />
+                  <div><h4 class="font-bold text-gray-800">鈴木 花子</h4><p class="text-sm text-gray-500">お客様</p></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up" data-aos-delay="200">
-            <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
-            <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
-            <p class="text-gray-600 mb-6 flex-grow">丁寧に育てられた桃は香りも味も格別です。毎年楽しみにしています。</p>
-            <div class="flex items-center gap-4">
-              <img src="img/dp (1).png" alt="Customer Takahashi Kenichi" class="w-14 h-14 rounded-full object-cover" />
-              <div><h4 class="font-bold text-gray-800">高橋 健一</h4><p class="text-sm text-gray-500">お客様</p></div>
-            </div>
-          </div>
-          <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col" data-aos="fade-up" data-aos-delay="400">
-            <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
-            <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
-            <p class="text-gray-600 mb-6 flex-grow">新鮮な果物を安心して食べられるのが嬉しいです。家族みんなで楽しんでいます。</p>
-            <div class="flex items-center gap-4">
-              <img src="img/dp (2).png" alt="Customer Suzuki Hanako" class="w-14 h-14 rounded-full object-cover" />
-              <div><h4 class="font-bold text-gray-800">鈴木 花子</h4><p class="text-sm text-gray-500">お客様</p></div>
+          <div id="testimonial-slide2" class="carousel-item w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                    <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                    <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 mb-6 flex-grow">オンラインストアでの注文も簡単で、すぐに新鮮な果物が届きました。梱包も丁寧で大満足です。</p>
+                    <div class="flex items-center gap-4">
+                      <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Customer Tanaka Yuki" class="w-14 h-14 rounded-full object-cover" />
+                      <div><h4 class="font-bold text-gray-800">田中 雄樹</h4><p class="text-sm text-gray-500">お客様</p></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                    <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                    <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 mb-6 flex-grow">友人への贈り物として利用しましたが、とても喜んでもらえました。また利用します。</p>
+                    <div class="flex items-center gap-4">
+                      <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Customer Ito Daisuke" class="w-14 h-14 rounded-full object-cover" />
+                      <div><h4 class="font-bold text-gray-800">伊藤 大輔</h4><p class="text-sm text-gray-500">お客様</p></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm relative flex flex-col">
+                    <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 w-16 h-16 bg-[#F5D973] rounded-2xl flex items-center justify-center"><i class="fas fa-quote-left text-3xl text-gray-800"></i></div>
+                    <div class="flex text-yellow-400 mb-5 text-xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i></div>
+                    <p class="text-gray-600 mb-6 flex-grow">果物狩り体験は子供たちが大喜びでした。自分で収穫した果物は最高に美味しかったです。</p>
+                    <div class="flex items-center gap-4">
+                      <img src="https://randomuser.me/api/portraits/women/51.jpg" alt="Customer Watanabe Ai" class="w-14 h-14 rounded-full object-cover" />
+                      <div><h4 class="font-bold text-gray-800">渡辺 愛</h4><p class="text-sm text-gray-500">お客様</p></div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -344,66 +415,142 @@
     </section>
   </main>
   
+  <dialog id="modal_thoughts" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">果実に込めた思い</h3>
+      <img src="https://images.unsplash.com/photo-1535303311164-664fc6ec3513?auto=format&fit=crop&q=80&w=1287" alt="Fresh grapes in a field" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">自然の恵みを最大限に生かし、丹精込めて果物を育てています。私たちの農園では、土作りから収穫まで、すべての工程に愛情を注いでいます。確かな技術と長年の経験に裏打ちされた情熱で、一口食べれば笑顔になるような、最高品質の収穫をお届けすることをお約束します。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_fresh" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">新鮮な果物</h3>
+      <img src="https://images.unsplash.com/photo-1629828821950-96f37593c72b?auto=format&fit=crop&q=80&w=1287" alt="Close up of a ripe peach" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">摘みたての果物の美味しさを、そのまま皆さまにお届けします。当園では、完熟した旬の果実のみを厳選し、最も美味しい状態でお手元に届くよう、収穫から梱包までを迅速に行います。旬の香りと豊かな風味を大切に、一つひとつ丁寧に育てています。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_organic" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">有機栽培へのこだわり</h3>
+      <img src="https://images.unsplash.com/photo-1590292812833-554437a353ec?auto=format&fit=crop&q=80&w=1287" alt="A basket of fresh peaches" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">環境への配慮を第一に考え、化学肥料や農薬に極力頼らない有機栽培を実践しています。土壌の健康を守り、自然の生態系と共存することで、果物本来の力強い味わいを引き出します。ご家族皆様で安心して楽しめる、安全で美味しい果物作りが私たちの目標です。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_harvest" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">収穫コンセプト</h3>
+      <p class="py-4 text-base leading-relaxed">ここでは収穫コンセプトに関する詳細な説明を記述します。果物の最良の味わいを引き出すため、一つひとつ丁寧に収穫していること、そして品質管理へのこだわりなどを詳しく説明します。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_products" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">農産物</h3>
+      <p class="py-4 text-base leading-relaxed">私たちの農場で育てた新鮮で高品質な農産物について詳しく説明します。シャインマスカットや桃など、取り扱っている果物の特徴や、その美味しさの秘密について紹介します。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_soil" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">土壌改良</h3>
+      <p class="py-4 text-base leading-relaxed">栄養豊かな土壌作りへのこだわりを説明します。持続可能な農業を実践するために、どのような有機肥料を使用し、どのように土壌を管理しているかについて詳しく解説します。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_sales" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">直売所のご案内</h3>
+      <img src="https://images.unsplash.com/photo-1579112933184-2de31d749970?auto=format&fit=crop&q=80&w=1287" alt="Farm stand with fresh produce" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">私たちの農園には、採れたての新鮮な果物を直接お買い求めいただける直売所がございます。季節ごとに最も旬の果物が並びますので、ぜひお立ち寄りください。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_picking" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">果物狩り体験</h3>
+      <img src="https://images.unsplash.com/photo-1591060639912-2f22c6b402e1?auto=format&fit=crop&q=80&w=1287" alt="Person picking fruit from a tree" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">季節限定で、シャインマスカットや桃の収穫体験イベントを開催しています。ご自身のてで収穫した果物の味は格別です。ご家族やご友人と、楽しいひとときをお過ごしください。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+  <dialog id="modal_store" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-2xl mb-4">オンラインストア</h3>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1470" alt="Online store analytics on a laptop" class="w-full h-56 object-cover rounded-xl mb-4">
+      <p class="py-4 text-base leading-relaxed">遠方にお住まいの方でも、私たちの果物をお楽しみいただけるよう、オンラインストアを運営しています。贈答用の詰め合わせもご用意しておりますので、大切な方への贈り物にも最適です。</p>
+      <div class="modal-action"><form method="dialog"><button class="btn rounded-full">閉じる</button></form></div>
+    </div>
+  </dialog>
+
   <footer class="w-full" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="bg-[#F5D973]">
-      <div class="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <nav>
-          <ul class="nav-links flex flex-wrap justify-center items-center font-semibold text-gray-800 text-sm tracking-widest">
-            <li><a href="#" class="hover:text-gray-600">FARMERS</a></li>
-            <li><a href="#" class="hover:text-gray-600">ORGANIC</a></li>
-            <li><a href="#" class="hover:text-gray-600">FOODS</a></li>
-            <li><a href="#" class="hover:text-gray-600">PRODUCT</a></li>
-          </ul>
-        </nav>
-        <div class="flex items-center gap-6 text-sm font-semibold text-gray-800">
-          <a href="tel:0877571111" class="flex items-center gap-3 hover:text-gray-600">
-            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-phone"></i></div>
-            <span>0877-57-1111</span>
-          </a>
-          <a href="mailto:mail@mail.com" class="flex items-center gap-3 hover:text-gray-600">
-            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-envelope"></i></div>
-            <span>mail@mail.com</span>
-          </a>
+        <div class="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <nav>
+                <ul class="nav-links flex flex-wrap justify-center items-center font-semibold text-gray-800 text-sm tracking-widest">
+                    <li><a href="#" class="hover:text-gray-600">FARMERS</a></li>
+                    <li><a href="#" class="hover:text-gray-600">ORGANIC</a></li>
+                    <li><a href="#" class="hover:text-gray-600">FOODS</a></li>
+                    <li><a href="#" class="hover:text-gray-600">PRODUCT</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-6 text-sm font-semibold text-gray-800">
+                <a href="tel:0877571111" class="flex items-center gap-3 hover:text-gray-600">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-phone"></i></div>
+                    <span>0877-57-1111</span>
+                </a>
+                <a href="mailto:mail@mail.com" class="flex items-center gap-3 hover:text-gray-600">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><i class="fas fa-envelope"></i></div>
+                    <span>mail@mail.com</span>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
     <div class="bg-[#FDFBF5]">
-      <div class="container mx-auto px-4 pt-16 pb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div class="lg:col-span-1">
-            <img src="img/logo-black.png" alt="Logo" class="h-12 lg:h-16 mb-6" />
-            <p class="text-gray-600 mb-8 max-w-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <div class="flex items-center gap-3">
-              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+        <div class="container mx-auto px-4 pt-16 pb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-1">
+                    <img src="img/logo-black.png" alt="Logo" class="h-12 lg:h-16 mb-6" />
+                    <p class="text-gray-600 mb-8 max-w-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-[#609966] hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2"><p class="text-2xl md:text-3xl font-medium text-gray-700 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></div>
             </div>
-          </div>
-          <div class="lg:col-span-2"><p class="text-2xl md:text-3xl font-medium text-gray-700 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-start-2 md:col-span-1">
+                    <h5 class="font-bold text-gray-800 mb-4">Useful Link</h5>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="company.html" class="hover:text-[#609966]">Company</a></li>
+                        <li><a href="contact.html" class="hover:text-[#609966]">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-1">
+                    <h5 class="font-bold text-gray-800 mb-4">Our Address</h5>
+                    <p class="text-gray-600 leading-relaxed">〒761-2402香川県丸亀市<br />綾歌町岡田下346-3</p>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="md:col-start-2 md:col-span-1">
-            <h5 class="font-bold text-gray-800 mb-4">Useful Link</h5>
-            <ul class="space-y-3 text-gray-600">
-              <li><a href="company.html" class="hover:text-[#609966]">Company</a></li>
-              <li><a href="contact.html" class="hover:text-[#609966]">Contact</a></li>
-            </ul>
-          </div>
-          <div class="md:col-span-1">
-            <h5 class="font-bold text-gray-800 mb-4">Our Address</h5>
-            <p class="text-gray-600 leading-relaxed">〒761-2402香川県丸亀市<br />綾歌町岡田下346-3</p>
-          </div>
+        <div class="container mx-auto px-4">
+            <div class="border-t border-gray-200 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+                <div class="flex gap-6"><a href="#" class="hover:text-black">Terms & Conditions</a><a href="#" class="hover:text-black">Privacy Policy</a></div>
+                <div class="text-center sm:text-right"><p>© 2025 サヌキファーム。すべての権利を保有します。</p></div>
+            </div>
         </div>
-      </div>
-      <div class="container mx-auto px-4">
-        <div class="border-t border-gray-200 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
-          <div class="flex gap-6"><a href="#" class="hover:text-black">Terms & Conditions</a><a href="#" class="hover:text-black">Privacy Policy</a></div>
-          <div class="text-center sm:text-right"><p>© 2025 サヌキファーム。すべての権利を保有します。</p></div>
-        </div>
-      </div>
     </div>
   </footer>
+
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-[#609966] text-white flex items-center justify-center text-lg shadow-lg
+                                md:bottom-8 md:right-8 md:w-14 md:h-14 md:text-xl
+                                opacity-0 invisible translate-y-12 transition-all duration-500 ease-in-out z-40 hover:bg-[#508055]">
+      <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -411,8 +558,7 @@
         duration: 800,
         once: true,
     });
-  </script>
-  <script>
+
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     const closeBtn = document.getElementById("close-menu");
@@ -424,6 +570,72 @@
     closeBtn.addEventListener("click", () => {
       mobileMenu.classList.add("translate-x-full");
     });
+
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) { 
+            backToTopButton.classList.remove("opacity-0", "invisible", "translate-y-12");
+        } else {
+            backToTopButton.classList.add("opacity-0", "invisible", "translate-y-12");
+        }
+    });
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Service Carousel Logic (Manual Click, No Autoplay)
+    const serviceCarousel = document.getElementById("service-carousel");
+    if (serviceCarousel) {
+        const prevServiceButton = document.getElementById("carousel-prev");
+        const nextServiceButton = document.getElementById("carousel-next");
+        const totalServiceSlides = 2; 
+        let currentServiceSlide = 1;
+
+        const moveToServiceSlide = (slideNumber) => {
+            const slide = serviceCarousel.querySelector(`#slide${slideNumber}`);
+            if (slide) {
+                const scrollPosition = slide.offsetLeft - serviceCarousel.offsetLeft;
+                serviceCarousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+            }
+        };
+
+        nextServiceButton.addEventListener("click", () => {
+            currentServiceSlide = currentServiceSlide % totalServiceSlides + 1;
+            moveToServiceSlide(currentServiceSlide);
+        });
+
+        prevServiceButton.addEventListener("click", () => {
+            currentServiceSlide = currentServiceSlide === 1 ? totalServiceSlides : currentServiceSlide - 1;
+            moveToServiceSlide(currentServiceSlide);
+        });
+    }
+
+    // Testimonial Carousel Logic
+    const testimonialCarousel = document.getElementById("testimonial-carousel");
+    if (testimonialCarousel) {
+        const prevTestimonialButton = document.getElementById("testimonial-prev");
+        const nextTestimonialButton = document.getElementById("testimonial-next");
+        const totalTestimonialSlides = 2;
+        let currentTestimonialSlide = 1;
+
+        const moveToTestimonialSlide = (slideNumber) => {
+            const slide = testimonialCarousel.querySelector(`#testimonial-slide${slideNumber}`);
+            if(slide) {
+                const scrollPosition = slide.offsetLeft - testimonialCarousel.offsetLeft;
+                testimonialCarousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+            }
+        };
+
+        nextTestimonialButton.addEventListener("click", () => {
+            currentTestimonialSlide = currentTestimonialSlide % totalTestimonialSlides + 1;
+            moveToTestimonialSlide(currentTestimonialSlide);
+        });
+
+        prevTestimonialButton.addEventListener("click", () => {
+            currentTestimonialSlide = currentTestimonialSlide === 1 ? totalTestimonialSlides : currentTestimonialSlide - 1;
+            moveToTestimonialSlide(currentTestimonialSlide);
+        });
+    }
   </script>
 </body>
 </html>
