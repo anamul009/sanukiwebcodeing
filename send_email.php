@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- Configuration ---
-    $recipient_email = "kazi@gc-c.co.jp"; // YOUR EMAIL ADDRESS
+    $recipient_email = "info@kajitsunoousama.com"; // YOUR EMAIL ADDRESS
     $form_sender_email = "noreply@your-domain.com";    // AN EMAIL FROM YOUR DOMAIN
 
     // --- Sanitize Input ---
